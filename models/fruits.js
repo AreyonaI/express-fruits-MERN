@@ -1,4 +1,6 @@
 //create an array of fruits
+const mongoose = require('mongoose');
+
 const fruits = [
     {
         name: 'apple',
@@ -15,5 +17,11 @@ const fruits = [
         color: 'green',
         readyToEat: true
     }]
+const fruitSchema = new mongoose.Schema({
+    name:  { type: String, required: true },
+    color:  { type: String, required: true },
+    readyToEat: Boolean
+});
 
-    module.exports = fruits;
+const Fruit = mongoose.model('Fruit', fruitSchema);
+    module.exports = Fruit, fruits;

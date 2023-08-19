@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');
+
 const veggies = [
     {
       name: "spinach",
@@ -16,5 +18,10 @@ const veggies = [
     }
   ];
 
-
-module.exports = veggies;
+  const vegSchema = new mongoose.Schema({
+    name:  { type: String, required: true },
+    color:  { type: String, required: true },
+    readyToEat: Boolean
+});
+const Veggie = mongoose.model('Veggie', vegSchema);
+module.exports = Veggie, veggies;
