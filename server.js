@@ -142,6 +142,11 @@ app.post('/fruits/:id', async (req, res) => {
     res.render('ErrorPage', { error: 'Failed to delete fruit' });
   }
 });
+
+
+
+
+
 app.get('/veggies/:id', async (req, res) => {
   try {
     const foundVeggie = await Veggie.findById(req.params.id);
